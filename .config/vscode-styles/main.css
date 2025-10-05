@@ -1,0 +1,172 @@
+:root {
+    --ansi-black: #000000;
+    --ansi-red: #FF00FF;
+    --ansi-green: #00FFFF;
+    --ansi-yellow: #FFFFFF;
+    --ansi-blue: #5500FF;
+    --ansi-magenta: #FF00FF;
+    --ansi-cyan: #00FFFF;
+    --ansi-white: #C0C0C0;
+    --ansi-bright-black: #404040;
+    --ansi-bright-red: #FF66FF;
+    --ansi-bright-green: #66FFFF;
+    --ansi-bright-yellow: #FFFFFF;
+    --ansi-bright-blue: #8888FF;
+    --ansi-bright-magenta: #FF77FF;
+    --ansi-bright-cyan: #77FFFF;
+    --ansi-bright-white: #FFFFFF;
+
+    --qi-background: var(--ansi-magenta);
+    --qi-border-color: var(--ansi-magenta);
+    --qi-input-background: var(--ansi-magenta);
+    --qi-input-foreground: var(--ansi-magenta);
+    --qi-input-border-color: var(--ansi-magenta);
+    --qi-placeholder-foreground: var(--ansi-white);
+    --qi-list-background: var(--ansi-magenta);
+    --qi-list-foreground: var(--ansi-bright-yellow);
+    --qi-list-focused-background: var(--ansi-cyan);
+    --qi-list-focused-border-color: var(--ansi-magenta);
+    --qi-list-focused-foreground: var(--ansi-magenta);
+    --qi-list-highlight-foreground: var(--ansi-yellow);
+    --qi-list-highlight-text-shadow: 0 0 5px var(--ansi-yellow);
+    --qi-group-label-background: var(--ansi-black);
+    --qi-group-label-foreground: var(--ansi-magenta);
+    --qi-group-label-border-color: var(--ansi-cyan);
+
+    --tp-background: var(--ansi-black);
+    --tp-foreground: transparent;
+}
+
+.part.panel .composite.title * {
+    background-color: var(--tp-background) !important;
+    text: var(--tp-foreground) !important;
+    visibility: hidden;
+}
+
+.part.panel .composite.title {
+    background-color: var(--tp-background) !important;
+}
+
+/*
+ * custom.css for VS Code Quick Pick (Ctrl+P)
+ * Theme: Custom Terminal Black/Cyan/Magenta
+ * Layout: Near Full Screen
+ */
+
+/* --- Main Widget Container --- */
+.quick-input-widget {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: none !important;
+    max-height: none !important;
+
+    top: 0 !important;
+    left: 0 !important;
+
+    background-color: var(--qi-background) !important; /* terminal.background */
+    border: none !important;   /* terminal.ansiGreen (Cyan) as accent border */
+}
+
+.quick-input-header .monaco-inputbox {
+	border: none !important;
+}
+
+/* --- Input Box (where you type) --- */
+.quick-input-widget .quick-input-box input {
+    background-color: var(--qi-input-background) !important; /* Slightly lighter black for depth */
+    color: var(--qi-input-foreground) !important;            /* terminal.foreground */
+    border: none !important;
+}
+
+.quick-input-widget .quick-input-box input::placeholder {
+    height: 100vh !important; /* Fill available vertical space */
+    max-height: none !important;
+    color: var(--qi-placeholder-foreground) !important;
+}
+
+/* --- The List of Results --- */
+.quick-input-list .monaco-list, .quick-input-list {
+    height: 100vh !important; /* Fill available vertical space */
+    max-height: none !important;
+}
+
+.quick-input-list-entry-action-bar, .quick-input-list-entry-keybinding, .quick-input-list-separator {
+	visibility: hidden !important;
+}
+
+/* --- A Single Row in the List --- */
+.quick-input-list .monaco-list-row  {
+    position: relative !important;
+	height: max-content !important;
+    background-color: var(--qi-list-background) !important;
+    color: var(--qi-list-foreground) !important; /* terminal.foreground */
+    font-size: 2rem !important;
+}
+
+.quick-input-list .monaco-list-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    height: 100vh !important;
+        background-color: var(--qi-background) !important; /* terminal.background */
+
+    overflow: visible !important;
+}
+
+/* --- The FOCUSED/SELECTED Item in the List (MOST IMPORTANT) --- */
+.quick-input-list .monaco-list-row.focused,
+.quick-input-list .monaco-list-row.selected {
+    background-color: var(--qi-list-focused-background) !important; /* terminal.selectionBackground */
+    outline: 1px solid var(--qi-list-focused-border-color) !important; /* A slightly more opaque cyan outline */
+}
+/* Ensure text in a focused row is bright white for contrast */
+.quick-input-list .monaco-list-row.focused .label-name,
+.quick-input-list .monaco-list-row.selected .label-name {
+    color: var(--qi-list-focused-foreground) !important;
+}
+
+/* --- The Characters that Match Your Search Query --- */
+.quick-input-list .monaco-list-row .monaco-highlighted-label .highlight {
+    color: var(--qi-list-highlight-foreground) !important; /* terminal.ansiBrightRed (Bright Magenta) */
+    font-weight: bold !important;
+    text-shadow: var(--qi-list-highlight-text-shadow) !important; /* Add a subtle glow */
+}
+
+/* --- Group Separators (e.g., 'recently opened') --- */
+.quick-input-list .monaco-list-row-group-label {
+    background-color: var(--qi-group-label-background) !important;
+    color: var(--qi-group-label-foreground) !important;             /* terminal.ansiGreen (Cyan) */
+    font-weight: bold !important;
+    padding: 8px 24px !important;
+    border-top: 1px solid var(--qi-group-label-border-color) !important; /* terminal.border */
+    border-bottom: 1px solid var(--qi-group-label-border-color) !important;
+}
+
+/* --- Hide the progress bar that sometimes appears --- */
+.quick-input-widget .quick-input-progress {
+    display: none !important;
+}
+
+.quick-input-list-label {
+    height: max-content !important;
+}
+.quick-input-list-row  {
+    height: 100% !important;
+}
+
+.quick-input-list .monaco-tl-contents,.quick-input-list .monaco-tl-row,.quick-input-list .monaco-list-row {
+    height: 90px !important;
+}
+
+.quick-input-list .quick-input-list-entry, .quick-input-list-label, .quick-input-list-rows, .quick-input-list-row, .quick-input-list .monaco-icon-label, .quick-input-list .monaco-icon-label-contaner, .quick-input-list .monaco-icon-name-container {
+    height: 70px !important;
+
+}
+
+.monaco-icon-name-container {
+    display: flex !important;
+    justify-content: center !important;
+    align-content: center !important;
+}
+
+

@@ -55,7 +55,11 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+z kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+# bindsym $mod+d exec --no-startup-id dmenu_run
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec --no-startup-id env XDG_DATA_DIRS="$HOME/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:usr/bin" rofi -show drun
+
+
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -256,9 +260,9 @@ client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 client.background       #FFFFFF
 
 bindsym $mod+z mode "resize"
-gaps inner 18px
-gaps outer 39px
-gaps top 39px
+gaps inner 0px
+gaps outer 0px
+gaps top 0px
 
 default_border pixel 4
 
@@ -267,9 +271,12 @@ bindsym $mod+c exec hints
 bindsym $mod+m exec flameshot gui
 bindsym $mod+ctrl+shift+v exec copyq show
 
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id picom  -b --config ~/.config/picom/picom.conf 
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# exec_always --no-startup-id picom  -b --config ~/.config/picom/picom.conf 
+exec_always --no-startup-id warpd
+exec_always --no-startup-id copyq
 for_window [class=".*"] border pixel 1
 
 # Start background video on Monitor 1 (Left)
-exec_always --no-startup-id $HOME/.config/i3/wp.sh
+# exec_always --no-startup-id $HOME/.config/i3/wp.sh
+for_window [all] fullscreen enable
