@@ -49,7 +49,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec /home/linuxbrew/.linuxbrew/bin/wezterm
 
 # kill focused window
 bindsym $mod+Shift+z kill
@@ -100,9 +100,9 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-# bindsym $mod+s layout stacking
-# bindsym $mod+w layout tabbed
-# bindsym $mod+e layout toggle split
+bindsym $mod+s layout stacking
+bindsym $mod+g layout tabbed
+bindsym $mod+p layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -116,8 +116,8 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 # Define your monitor names
+set $monitor1 "DisplayPort-0"
 set $monitor2 "HDMI-A-0"
-set $monitor1 "DisplayPort-1"
 set $monitor3 "HDMI-A-1"
 
 # Define workspaces for Monitor 3
@@ -264,19 +264,23 @@ gaps inner 0px
 gaps outer 0px
 gaps top 0px
 
-default_border pixel 4
+default_border none
 
-bindsym $mod+c exec hints
+# bindsym $mod+c exec hints
 # bindsym $mod+x exec hints --mode scroll
 bindsym $mod+m exec flameshot gui
 bindsym $mod+ctrl+shift+v exec copyq show
+bindsym $mod+ctrl+d exec /home/linuxbrew/.linuxbrew/bin/wezterm start -- /home/des/.local/bin/yazi-wrapper.sh
+
 
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # exec_always --no-startup-id picom  -b --config ~/.config/picom/picom.conf 
 exec_always --no-startup-id warpd
 exec_always --no-startup-id copyq
-for_window [class=".*"] border pixel 1
+for_window [class=".*"] border none 0
+
+font pango:monospace 0
 
 # Start background video on Monitor 1 (Left)
 # exec_always --no-startup-id $HOME/.config/i3/wp.sh
-for_window [all] fullscreen enable
+for_window [all] fullscreen disable
