@@ -1,0 +1,13 @@
+# Yazi Theme Configuration
+# Amber CRT theme matching wezterm
+
+[tabs]
+# Active tab - bright amber on slightly visible dark background
+active = { fg = "#FFBF00", bg = "#1a1000", bold = true }
+
+# Inactive tab - dimmer amber on black, but still visible
+inactive = { fg = "#CC9900", bg = "#000000" }
+
+# Tab separators
+sep_inner = { open = "[", close = "]" }
+sep_outer = { open = "", close = "" }

@@ -109,7 +109,6 @@ bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
-
 # focus the parent container
 bindsym $mod+a focus parent
 
@@ -121,7 +120,7 @@ set $monitor2 "HDMI-A-0"
 set $monitor3 "HDMI-A-1"
 
 # Define workspaces for Monitor 3
-set $wsS "35:X"
+set $wsS "95:X"
 
 # Assign workspaces to Monitor 3
 workspace $wsS output $monitor3
@@ -129,28 +128,46 @@ workspace $wsS output $monitor3
 # Switch to workspace on Monitor 3
 # bindsym $mod+s workspace number $wsS
 
-# Define workspaces for Monitor 1 (q-w-e-r-t-y-u-i-o)
-set $wsQ "1:月"
-set $wsW "2:火"
-set $wsE "3:水"
-set $wsR "4:木"
-set $wsT "5:金"
-set $wsY "6:土"
-set $wsU "7:日"
-set $wsI "8:空"
-set $wsO "9:無"
+# Define workspaces for Monitor 1
+set $wsQ "1"
+set $wsW "2"
+set $wsE "3"
+set $wsR "4"
+set $wsT "5"
+set $wsY "6"
+set $wsU "7"
+set $wsI "8"
+set $wsO "9"
+set $wsQ2 "10"
+set $wsW2 "11"
+set $wsE2 "12"
+set $wsR2 "13"
+set $wsT2 "14"
+set $wsY2 "15"
+set $wsU2 "16"
+set $wsI2 "17"
+set $wsO2 "18"
 
-# Define workspaces for Monitor 2 (Numbers 1-9)
-# 一(1), 二(2), 三(3), 四(4), 五(5), 六(6), 七(7), 八(8), 九(9)
-set $ws1 "10:一"
-set $ws2 "11:二"
-set $ws3 "12:三"
-set $ws4 "13:四"
-set $ws5 "14:五"
-set $ws6 "15:六"
-set $ws7 "16:七"
-set $ws8 "18:八"
-set $ws9 "19:九"
+# Define workspaces for Monitor 2 
+set $ws1 "20"
+set $ws2 "21"
+set $ws3 "22"
+set $ws4 "23"
+set $ws5 "24"
+set $ws6 "25"
+set $ws7 "26"
+set $ws8 "28"
+set $ws9 "29"
+set $ws10 "30"
+set $ws20 "31"
+set $ws30 "32"
+set $ws40 "33"
+set $ws50 "34"
+set $ws60 "35"
+set $ws70 "36"
+set $ws80 "37"
+set $ws90 "38"
+
 
 # Assign workspaces to specific outputs
 # Workspaces for Monitor 1
@@ -163,6 +180,15 @@ workspace $wsY output $monitor1
 workspace $wsU output $monitor1
 workspace $wsI output $monitor1
 workspace $wsO output $monitor1
+workspace $wsQ2 output $monitor1
+workspace $wsW2 output $monitor1
+workspace $wsE2 output $monitor1
+workspace $wsR2 output $monitor1
+workspace $wsT2 output $monitor1
+workspace $wsY2 output $monitor1
+workspace $wsU2 output $monitor1
+workspace $wsI2 output $monitor1
+workspace $wsO2 output $monitor1
 
 # Workspaces for Monitor 2
 workspace $ws1 output $monitor2
@@ -174,6 +200,15 @@ workspace $ws6 output $monitor2
 workspace $ws7 output $monitor2
 workspace $ws8 output $monitor2
 workspace $ws9 output $monitor2
+workspace $ws10 output $monitor2
+workspace $ws20 output $monitor2
+workspace $ws30 output $monitor2
+workspace $ws40 output $monitor2
+workspace $ws50 output $monitor2
+workspace $ws60 output $monitor2
+workspace $ws70 output $monitor2
+workspace $ws80 output $monitor2
+workspace $ws90 output $monitor2
 
 # Switch to workspace on Monitor 1
 bindsym $mod+q workspace number $wsQ
@@ -185,6 +220,15 @@ bindsym $mod+y workspace number $wsY
 bindsym $mod+u workspace number $wsU
 bindsym $mod+i workspace number $wsI
 bindsym $mod+o workspace number $wsO
+bindsym Ctrl+$mod+q workspace number $wsQ2
+bindsym Ctrl+$mod+w workspace number $wsW2
+bindsym Ctrl+$mod+e workspace number $wsE2
+bindsym Ctrl+$mod+r workspace number $wsR2
+bindsym Ctrl+$mod+t workspace number $wsT2
+bindsym Ctrl+$mod+y workspace number $wsY2
+bindsym Ctrl+$mod+u workspace number $wsU2
+bindsym Ctrl+$mod+i workspace number $wsI2
+bindsym Ctrl+$mod+o workspace number $wsO2
 
 # Switch to workspace on Monitor 2
 bindsym $mod+1 workspace number $ws1
@@ -196,6 +240,15 @@ bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
+bindsym Ctrl+$mod+1 workspace number $ws10
+bindsym Ctrl+$mod+2 workspace number $ws20
+bindsym Ctrl+$mod+3 workspace number $ws30
+bindsym Ctrl+$mod+4 workspace number $ws40
+bindsym Ctrl+$mod+5 workspace number $ws50
+bindsym Ctrl+$mod+6 workspace number $ws60
+bindsym Ctrl+$mod+7 workspace number $ws70
+bindsym Ctrl+$mod+8 workspace number $ws80
+bindsym Ctrl+$mod+9 workspace number $ws90
 
 # Move focused container to workspace on Monitor 1
 bindsym $mod+Shift+q move container to workspace number $wsQ
@@ -207,6 +260,16 @@ bindsym $mod+Shift+y move container to workspace number $wsY
 bindsym $mod+Shift+u move container to workspace number $wsU
 bindsym $mod+Shift+i move container to workspace number $wsI
 bindsym $mod+Shift+o move container to workspace number $wsO
+bindsym Ctrl+$mod+Shift+q move container to workspace number $wsQ2
+bindsym Ctrl+$mod+Shift+w move container to workspace number $wsW2
+bindsym Ctrl+$mod+Shift+e move container to workspace number $wsE2
+bindsym Ctrl+$mod+Shift+r move container to workspace number $wsR2
+bindsym Ctrl+$mod+Shift+t move container to workspace number $wsT2
+bindsym Ctrl+$mod+Shift+y move container to workspace number $wsY2
+bindsym Ctrl+$mod+Shift+u move container to workspace number $wsU2
+bindsym Ctrl+$mod+Shift+i move container to workspace number $wsI2
+bindsym Ctrl+$mod+Shift+o move container to workspace number $wsO2
+
 
 # Move focused container to workspace on Monitor 2
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -218,6 +281,15 @@ bindsym $mod+Shift+6 move container to workspace number $ws6
 bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym Ctrl+$mod+Shift+1 move container to workspace number $ws10
+bindsym Ctrl+$mod+Shift+2 move container to workspace number $ws20
+bindsym Ctrl+$mod+Shift+3 move container to workspace number $ws30
+bindsym Ctrl+$mod+Shift+4 move container to workspace number $ws40
+bindsym Ctrl+$mod+Shift+5 move container to workspace number $ws50
+bindsym Ctrl+$mod+Shift+6 move container to workspace number $ws60
+bindsym Ctrl+$mod+Shift+7 move container to workspace number $ws70
+bindsym Ctrl+$mod+Shift+8 move container to workspace number $ws80
+bindsym Ctrl+$mod+Shift+9 move container to workspace number $ws90
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -273,7 +345,10 @@ bindsym $mod+ctrl+shift+v exec copyq show
 bindsym $mod+ctrl+d exec /home/linuxbrew/.linuxbrew/bin/wezterm start -- /home/des/.local/bin/yazi-wrapper.sh
 
 
-# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id $HOME/.config/i3/monitor.sh
+# exec --no-startup-id ~/.config/i3/scripts/zen/zen-limited-monitor.sh
+# exec --no-startup-id ~/.config/i3/scripts/chrome/chrome-limited-monitor.sh
+
 # exec_always --no-startup-id picom  -b --config ~/.config/picom/picom.conf 
 exec_always --no-startup-id warpd
 exec_always --no-startup-id copyq
@@ -284,3 +359,87 @@ font pango:monospace 0
 # Start background video on Monitor 1 (Left)
 # exec_always --no-startup-id $HOME/.config/i3/wp.sh
 for_window [all] fullscreen disable
+
+bindsym $mod+shift+s mode "save"
+bindsym $mod+shift+n mode "restore"
+set $i3_resurrect i3-resurrect
+
+mode "save" {
+	# Extra workspaces for Monitor 1 (Ctrl+$mod+q-w-e-r-t-y-u-i-o for workspaces 10-18)
+	bindsym Ctrl+$mod+q exec "$i3_resurrect save -w 10 -n  --swallow=class,instance,title && ~/.config/i3-resurrect/scripts/save-browser-tabs.sh 10"
+	bindsym Ctrl+$mod+w exec "$i3_resurrect save -w 11 -n  --swallow=class,instance,title && ~/.config/i3-resurrect/scripts/save-browser-tabs.sh 11"
+	bindsym Ctrl+$mod+e exec "$i3_resurrect save -w 12 -n  --swallow=class,instance,title && ~/.config/i3-resurrect/scripts/save-browser-tabs.sh 12"
+	bindsym Ctrl+$mod+r exec "$i3_resurrect save -w 13 -n  --swallow=class,instance,title && ~/.config/i3-resurrect/scripts/save-browser-tabs.sh 13"
+	bindsym Ctrl+$mod+t exec "$i3_resurrect save -w 14 -n  --swallow=class,instance,title && ~/.config/i3-resurrect/scripts/save-browser-tabs.sh 14"
+	bindsym Ctrl+$mod+y exec "$i3_resurrect save -w 15 -n  --swallow=class,instance,title && ~/.config/i3-resurrect/scripts/save-browser-tabs.sh 15"
+	bindsym Ctrl+$mod+u exec "$i3_resurrect save -w 16 -n  --swallow=class,instance,title && ~/.config/i3-resurrect/scripts/save-browser-tabs.sh 16"
+	bindsym Ctrl+$mod+i exec "$i3_resurrect save -w 17 -n  --swallow=class,instance,title && ~/.config/i3-resurrect/scripts/save-browser-tabs.sh 17"
+	bindsym Ctrl+$mod+o exec "$i3_resurrect save -w 18 -n  --swallow=class,instance,title && ~/.config/i3-resurrect/scripts/save-browser-tabs.sh 18"
+
+	# Extra workspaces for Monitor 2 (Ctrl+$mod+1-9 for workspaces 20-28)
+	bindsym Ctrl+$mod+1 exec "$i3_resurrect save -w 20 -n --swallow=class,instance,title && ~/.config/i3-resurrect/scripts/save-browser-tabs.sh 20"
+	bindsym Ctrl+$mod+2 exec "$i3_resurrect save -w 21 -n --swallow=class,instance,title && ~/.config/i3-resurrect/scripts/save-browser-tabs.sh 21"
+	bindsym Ctrl+$mod+3 exec "$i3_resurrect save -w 22 -n --swallow=class,instance,title && ~/.config/i3-resurrect/scripts/save-browser-tabs.sh 22"
+	bindsym Ctrl+$mod+4 exec "$i3_resurrect save -w 23 -n --swallow=class,instance,title && ~/.config/i3-resurrect/scripts/save-browser-tabs.sh 23"
+	bindsym Ctrl+$mod+5 exec "$i3_resurrect save -w 24 -n --swallow=class,instance,title && ~/.config/i3-resurrect/scripts/save-browser-tabs.sh 24"
+	bindsym Ctrl+$mod+6 exec "$i3_resurrect save -w 25 -n --swallow=class,instance,title && ~/.config/i3-resurrect/scripts/save-browser-tabs.sh 25"
+	bindsym Ctrl+$mod+7 exec "$i3_resurrect save -w 26 -n --swallow=class,instance,title && ~/.config/i3-resurrect/scripts/save-browser-tabs.sh 26"
+	bindsym Ctrl+$mod+8 exec "$i3_resurrect save -w 27 -n --swallow=class,instance,title && ~/.config/i3-resurrect/scripts/save-browser-tabs.sh 27"
+	bindsym Ctrl+$mod+9 exec "$i3_resurrect save -w 28 -n --swallow=class,instance,title && ~/.config/i3-resurrect/scripts/save-browser-tabs.sh 28"
+
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym s mode "default"
+	bindsym $mod+s mode "default"
+}
+
+mode "restore" {
+    # Extra Monitor 1 workspaces (programs-only with Ctrl+$mod+key)
+    bindsym Ctrl+$mod+q exec "$i3_resurrect restore -w 10 -n --programs-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 10"
+    bindsym Ctrl+$mod+w exec "$i3_resurrect restore -w 11 -n --programs-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 11"
+    bindsym Ctrl+$mod+e exec "$i3_resurrect restore -w 12 -n --programs-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 12"
+    bindsym Ctrl+$mod+r exec "$i3_resurrect restore -w 13 -n --programs-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 13"
+    bindsym Ctrl+$mod+t exec "$i3_resurrect restore -w 14 -n --programs-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 14"
+    bindsym Ctrl+$mod+y exec "$i3_resurrect restore -w 15 -n --programs-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 15"
+    bindsym Ctrl+$mod+u exec "$i3_resurrect restore -w 16 -n --programs-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 16"
+    bindsym Ctrl+$mod+i exec "$i3_resurrect restore -w 17 -n --programs-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 17"
+    bindsym Ctrl+$mod+o exec "$i3_resurrect restore -w 18 -n --programs-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 18"
+
+    # Extra Monitor 2 workspaces (programs-only with Ctrl+$mod+key)
+    bindsym Ctrl+$mod+1 exec "$i3_resurrect restore -w 20 -n --programs-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 20"
+    bindsym Ctrl+$mod+2 exec "$i3_resurrect restore -w 21 -n --programs-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 21"
+    bindsym Ctrl+$mod+3 exec "$i3_resurrect restore -w 22 -n --programs-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 22"
+    bindsym Ctrl+$mod+4 exec "$i3_resurrect restore -w 23 -n --programs-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 23"
+    bindsym Ctrl+$mod+5 exec "$i3_resurrect restore -w 24 -n --programs-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 24"
+    bindsym Ctrl+$mod+6 exec "$i3_resurrect restore -w 25 -n --programs-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 25"
+    bindsym Ctrl+$mod+7 exec "$i3_resurrect restore -w 26 -n --programs-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 26"
+    bindsym Ctrl+$mod+8 exec "$i3_resurrect restore -w 27 -n --programs-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 27"
+    bindsym Ctrl+$mod+9 exec "$i3_resurrect restore -w 28 -n --programs-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 28"
+
+    # Extra Monitor 1 workspaces (layout-only with Ctrl+$mod+Shift+key)
+    bindsym Ctrl+$mod+Shift+q exec "$i3_resurrect restore -w 10 -n --layout-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 10"
+    bindsym Ctrl+$mod+Shift+w exec "$i3_resurrect restore -w 11 -n --layout-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 11"
+    bindsym Ctrl+$mod+Shift+e exec "$i3_resurrect restore -w 12 -n --layout-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 12"
+    bindsym Ctrl+$mod+Shift+r exec "$i3_resurrect restore -w 13 -n --layout-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 13"
+    bindsym Ctrl+$mod+Shift+t exec "$i3_resurrect restore -w 14 -n --layout-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 14"
+    bindsym Ctrl+$mod+Shift+y exec "$i3_resurrect restore -w 15 -n --layout-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 15"
+    bindsym Ctrl+$mod+Shift+u exec "$i3_resurrect restore -w 16 -n --layout-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 16"
+    bindsym Ctrl+$mod+Shift+i exec "$i3_resurrect restore -w 17 -n --layout-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 17"
+    bindsym Ctrl+$mod+Shift+o exec "$i3_resurrect restore -w 18 -n --layout-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 18"
+
+    # Extra Monitor 2 workspaces (layout-only with Ctrl+$mod+Shift+key)
+    bindsym Ctrl+$mod+Shift+1 exec "$i3_resurrect restore -w 20 -n --layout-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 20"
+    bindsym Ctrl+$mod+Shift+2 exec "$i3_resurrect restore -w 21 -n --layout-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 21"
+    bindsym Ctrl+$mod+Shift+3 exec "$i3_resurrect restore -w 22 -n --layout-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 22"
+    bindsym Ctrl+$mod+Shift+4 exec "$i3_resurrect restore -w 23 -n --layout-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 23"
+    bindsym Ctrl+$mod+Shift+5 exec "$i3_resurrect restore -w 24 -n --layout-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 24"
+    bindsym Ctrl+$mod+Shift+6 exec "$i3_resurrect restore -w 25 -n --layout-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 25"
+    bindsym Ctrl+$mod+Shift+7 exec "$i3_resurrect restore -w 26 -n --layout-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 26"
+    bindsym Ctrl+$mod+Shift+8 exec "$i3_resurrect restore -w 27 -n --layout-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 27"
+    bindsym Ctrl+$mod+Shift+9 exec "$i3_resurrect restore -w 28 -n --layout-only && ~/.config/i3-resurrect/scripts/restore-browser-tabs.sh 28"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym n mode "default"
+    bindsym $mod+n mode "default"
+}

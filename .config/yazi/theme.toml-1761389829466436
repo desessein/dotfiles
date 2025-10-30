@@ -1,0 +1,66 @@
+# Yazi Theme - Amber CRT style
+# Fixes tab visibility issues
+
+[manager]
+# Tab bar styling
+[tab]
+# Active tab
+active = { fg = "#000000", bg = "#FFBF00", bold = true }
+# Inactive tabs - make them visible with lighter amber
+inactive = { fg = "#FFBF00", bg = "#332200" }
+
+[status]
+# Status bar
+normal = { fg = "#FFBF00", bg = "#000000" }
+
+[select]
+# Selection colors
+border = { fg = "#FFBF00" }
+active = { fg = "#000000", bg = "#FFBF00" }
+inactive = { fg = "#FFBF00", bg = "#332200" }
+
+[input]
+# Input fields
+border = { fg = "#FFBF00" }
+title = { fg = "#FFBF00" }
+value = { fg = "#FFBF00" }
+selected = { bg = "#554500" }
+
+[completion]
+# Completion popup
+border = { fg = "#FFBF00" }
+active = { fg = "#000000", bg = "#FFBF00" }
+inactive = { fg = "#FFBF00", bg = "#000000" }
+
+[tasks]
+# Task manager
+border = { fg = "#FFBF00" }
+title = { fg = "#FFBF00" }
+hovered = { fg = "#000000", bg = "#FFBF00" }
+
+[which]
+# Which-key helper
+cols = 3
+mask = { bg = "#000000" }
+cand = { fg = "#FFBF00" }
+rest = { fg = "#D9A400" }
+desc = { fg = "#FFBF00" }
+separator = "  "
+
+[help]
+# Help popup
+on = { fg = "#FFBF00" }
+run = { fg = "#FFBF00" }
+desc = { fg = "#D9A400" }
+hovered = { bg = "#332200" }
+footer = { fg = "#FFBF00", bg = "#000000" }
+
+[filetype]
+# File type colors
+rules = [
+    { name = "*/", fg = "#FFBF00", bold = true },
+    { name = "*", fg = "#D9A400" },
+]
+
+[icons]
+# Use default icons with amber coloring

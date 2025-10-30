@@ -1,0 +1,86 @@
+# Yazi Configuration
+# For Yazi 0.3+ with VS Code integration
+
+[opener]
+# VS Code openers with different modes
+edit = [
+    { run = '~/.local/bin/yazi-vscode-opener.sh "$@" edit', orphan = true, desc = "Edit in VS Code" }
+]
+
+preview = [
+    { run = '~/.local/bin/yazi-vscode-opener.sh "$@" preview', orphan = true, desc = "Preview in VS Code" }
+]
+
+split = [
+    { run = '~/.local/bin/yazi-vscode-opener.sh "$@" split', orphan = true, desc = "Open in VS Code split" }
+]
+
+# Keep system defaults for other file types
+reveal = [
+    { run = 'xdg-open "$@"', orphan = true, desc = "Open with system default" }
+]
+
+[open]
+# File type associations
+rules = [
+    # Text and code files go to VS Code
+    { mime = "text/*", use = "preview" },
+    { mime = "application/json", use = "preview" },
+    { mime = "application/javascript", use = "preview" },
+    { mime = "application/x-yaml", use = "preview" },
+    { mime = "application/xml", use = "preview" },
+    { mime = "inode/x-empty", use = "preview" },
+
+    # Programming language files by extension
+    { name = "*.rs", use = "preview" },
+    { name = "*.py", use = "preview" },
+    { name = "*.js", use = "preview" },
+    { name = "*.ts", use = "preview" },
+    { name = "*.jsx", use = "preview" },
+    { name = "*.tsx", use = "preview" },
+    { name = "*.vue", use = "preview" },
+    { name = "*.css", use = "preview" },
+    { name = "*.go", use = "preview" },
+    { name = "*.c", use = "preview" },
+    { name = "*.cpp", use = "preview" },
+    { name = "*.h", use = "preview" },
+    { name = "*.java", use = "preview" },
+    { name = "*.sh", use = "preview" },
+    { name = "*.bash", use = "preview" },
+    { name = "*.zsh", use = "preview" },
+    { name = "*.fish", use = "preview" },
+    { name = "*.lua", use = "preview" },
+    { name = "*.vim", use = "preview" },
+    { name = "*.md", use = "preview" },
+    { name = "*.toml", use = "preview" },
+    { name = "*.yaml", use = "preview" },
+    { name = "*.yml", use = "preview" },
+    { name = "*.ini", use = "preview" },
+    { name = "*.conf", use = "preview" },
+    { name = "*.config", use = "preview" },
+
+    # Shader files
+    { name = "*.glsl", use = "preview" },
+    { name = "*.vert", use = "preview" },
+    { name = "*.frag", use = "preview" },
+    { name = "*.geom", use = "preview" },
+    { name = "*.comp", use = "preview" },
+    { name = "*.tesc", use = "preview" },
+    { name = "*.tese", use = "preview" },
+
+    # Everything else uses system default
+    { mime = "*", use = "reveal" },
+]
+
+[mgr]
+# Show hidden files by default
+show_hidden = true
+
+# Sort settings
+sort_by = "natural"
+sort_dir_first = true
+sort_sensitive = false
+sort_reverse = false
+
+# Line mode for better file info display
+linemode = "size"

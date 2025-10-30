@@ -3,5 +3,35 @@ use = "h-hg/yamb"
 rev = "22af003"
 hash = "7cc42012a7c2099f80064d228feb8d44"
 
+[[plugin.deps]]
+use = "DreamMaoMao/searchjump"
+rev = "7fafec3"
+hash = "5337bf545993d8c4dec2c229031f49d"
+
+[[plugin.deps]]
+use = "MasouShizuka/projects"
+rev = "a5e33db"
+hash = "3de26efded35814ba3e55e28f1c389a4"
+
+[[plugin.deps]]
+use = "Shallow-Seek/fazif"
+rev = "6e10488"
+hash = "c549ff30fb1d1d97c734010fe82f6295"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-enter"
+rev = "8f1d971"
+hash = "56fdabc96fc1f4d53c96eb884b02a5be"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "8f1d971"
+hash = "63b6c222bf2103b3023389dde5e2ecfe"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:zoom"
+rev = "8f1d971"
+hash = "9dee2bf990ea941ccf67df74bca45468"
+
 [flavor]
 deps = []

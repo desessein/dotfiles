@@ -37,3 +37,149 @@ desc = "Rename bookmark by key"
 on = [ "u", "R" ]
 run = "plugin yamb rename_by_fzf"
 desc = "Rename bookmark by fzf"
+
+# VS Code Integration Keybindings
+[[mgr.prepend_keymap]]
+on = [ "e" ]
+run = "open --use=edit"
+desc = "Edit in VS Code (current window)"
+
+[[mgr.prepend_keymap]]
+on = [ "E" ]
+run = "open --use=split"
+desc = "Open in VS Code split"
+
+# Override default Enter to use preview mode (--goto)
+# This allows quick peeking without fully committing the file to the editor
+[[mgr.prepend_keymap]]
+on = [ "<Enter>" ]
+run = "plugin smart-enter"
+desc = "Smart enter (open file or enter directory)"
+
+# Navigation Enhancement Plugins
+[[mgr.prepend_keymap]]
+on = [ "s" ]
+run = "plugin searchjump"
+desc = "Flash-style jump to file"
+
+# Projects plugin - save/load workspace sessions
+[[mgr.prepend_keymap]]
+on = [ "P", "s" ]
+run = "plugin projects save"
+desc = "Save current project"
+
+[[mgr.prepend_keymap]]
+on = [ "P", "l" ]
+run = "plugin projects load"
+desc = "Load project"
+
+[[mgr.prepend_keymap]]
+on = [ "P", "P" ]
+run = "plugin projects load_last"
+desc = "Load last project"
+
+# Fuzzy finding with fzf
+# Use 'f' prefix for find operations
+[[mgr.prepend_keymap]]
+on = [ "f", "f" ]
+run = "shell --block --confirm 'SELECTED=$(fd -H -t f | fzf --preview \"bat --color=always --style=numbers {}\"); [ -n \"$SELECTED\" ] && code --reuse-window \"$SELECTED\"'"
+desc = "Fuzzy find file and open in VS Code"
+
+[[mgr.prepend_keymap]]
+on = [ "f", "d" ]
+run = "plugin fzf-cd"
+desc = "Fuzzy find directory"
+
+[[mgr.prepend_keymap]]
+on = [ "f", "g" ]
+run = '''shell --block --confirm 'SELECTED=$(fzf --disabled --ansi --bind "change:reload:rg --column --line-number --color=always --smart-case {q} || true" --delimiter : --preview "bat --color=always --style=numbers --highlight-line {2} {1}" --preview-window "+{2}-/2" | awk -F: "{print \$1}"); [ -n "$SELECTED" ] && code --reuse-window "$SELECTED"' '''
+desc = "Fuzzy grep content and open in VS Code"
+
+# Image zoom controls
+[[mgr.prepend_keymap]]
+on = [ "+" ]
+run = "plugin zoom --args=in"
+desc = "Zoom in image"
+
+[[mgr.prepend_keymap]]
+on = [ "-" ]
+run = "plugin zoom --args=out"
+desc = "Zoom out image"
+
+[[mgr.prepend_keymap]]
+on = [ "=" ]
+run = "plugin zoom --args=reset"
+desc = "Reset image zoom"
+
+# Tree view for project overview
+[[mgr.prepend_keymap]]
+on = [ "T" ]
+run = "shell --block --confirm 'tree -C -L 3; printf \"\\nPress enter to continue...\"; read dummy'"
+desc = "Show tree view (3 levels)"
+
+# Open new WezTerm window at current directory
+[[mgr.prepend_keymap]]
+on = [ "W" ]
+run = "shell --orphan 'wezterm start --cwd . &'"
+desc = "Open new WezTerm window here"
+
+# Bunny bookmarks - Session-based and persistent hops
+[[mgr.prepend_keymap]]
+on = [ ";" ]
+run = "plugin bunny"
+desc = "Bunny bookmarks menu (create ephemeral hops)"
+
+[[mgr.prepend_keymap]]
+on = [ "'" ]
+run = "plugin bunny fuzzy"
+desc = "Fuzzy search bunny bookmarks"
+
+# Git integration plugins
+[[mgr.prepend_keymap]]
+on = [ "g", "i" ]
+run = "plugin lazygit"
+desc = "Open lazygit"
+
+[[mgr.prepend_keymap]]
+on = [ "g", "c" ]
+run = "plugin vcs-files"
+desc = "Show Git file changes"
+
+# Copy file contents to clipboard
+[[mgr.prepend_keymap]]
+on = [ "Y" ]
+run = "plugin copy-file-contents"
+desc = "Copy file contents to clipboard"
+
+# Git navigation and path plugins
+[[mgr.prepend_keymap]]
+on = [ "c", "r" ]
+run = "plugin path-from-root"
+desc = "Copy path from git root"
+
+[[mgr.prepend_keymap]]
+on = [ "g", "r" ]
+run = "plugin cd-git-root"
+desc = "Go to git repo root"
+
+# Vim-style relative motions
+[[mgr.prepend_keymap]]
+on = [ "e" ]
+run = "plugin relative-motions"
+desc = "Trigger relative motion"
+
+# Navigation history (vim-style jump list)
+[[mgr.prepend_keymap]]
+on = [ "<C-o>" ]
+run = "back"
+desc = "Go back in navigation history"
+
+[[mgr.prepend_keymap]]
+on = [ "<C-]>" ]
+run = "forward"
+desc = "Go forward in navigation history"
+
+[[manager.prepend_keymap]]
+on = [ "b", "r" ]
+run = "plugin restore"
+desc = "Restore files from trash"
