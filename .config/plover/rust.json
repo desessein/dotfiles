@@ -1,0 +1,10 @@
+{
+	"TP*PB": "rs_fn{#Control_L(space)}{#Tab}",
+  "HR*ET": "rs_let{#Tab}",            
+  "PHA*FP": "rs_match{#Tab}",         
+  "TKR*EUFB": "rs_derive{#Tab}",      
+  "STR*U": "struct ${1:Name} {{#Enter}${0}{#Enter}}{#Up}{#Up}{#Tab}",
+  "HRAO*EGS": "rs_logos{#Tab}",       
+  "HRAO*EP": "rs_lexerloop{#Tab}",    
+  "PR*PB": "println!(\"{:?}\", ${1});{#Left}{#Left}{#Left}"
+}
