@@ -28,7 +28,11 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+# Disable screen blanking and sleep
+exec --no-startup-id xset s off
+exec --no-startup-id xset -dpms
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -96,7 +100,7 @@ bindsym $mod+b split h
 # split in vertical orientation
 bindsym $mod+v split v
 
-# enter fullscreen mode for the focused container
+
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
@@ -114,6 +118,7 @@ bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
+
 # Define your monitor names
 set $monitor1 "DisplayPort-0"
 set $monitor2 "HDMI-A-0"
@@ -126,7 +131,7 @@ set $wsS "95:X"
 workspace $wsS output $monitor3
 
 # Switch to workspace on Monitor 3
-# bindsym $mod+s workspace number $wsS
+#bindsym $mod+s workspace number $wsS
 
 # Define workspaces for Monitor 1
 set $wsQ "1"
@@ -344,14 +349,22 @@ bindsym $mod+m exec flameshot gui
 bindsym $mod+ctrl+shift+v exec copyq show
 bindsym $mod+ctrl+d exec /home/linuxbrew/.linuxbrew/bin/wezterm start -- /home/des/.local/bin/yazi-wrapper.sh
 
+# Dedicated yazi window (ID 10) with scratchpad
+bindsym $mod+Shift+minus exec --no-startup-id /home/des/.local/bin/launch-yazi-main.sh
+bindsym $mod+minus [con_mark="yazi_main"] scratchpad show
+bindsym $mod+Delete [con_mark="yazi_main"] scratchpad show
+
 
 exec --no-startup-id $HOME/.config/i3/monitor.sh
 # exec --no-startup-id ~/.config/i3/scripts/zen/zen-limited-monitor.sh
 # exec --no-startup-id ~/.config/i3/scripts/chrome/chrome-limited-monitor.sh
 
-# exec_always --no-startup-id picom  -b --config ~/.config/picom/picom.conf 
+# exec_always --no-startup-id picom  -b --config ~/.config/picom/picom.conf
 exec_always --no-startup-id warpd
 exec_always --no-startup-id copyq
+exec_always --no-startup-id ~/.config/i3/yazi-scratchpad-autohide.sh
+exec_always --no-startup-id xbindkeys
+exec_always --no-startup-id ~/.config/mouse-shift-daemon.sh
 for_window [class=".*"] border none 0
 
 font pango:monospace 0
@@ -443,3 +456,4 @@ mode "restore" {
     bindsym n mode "default"
     bindsym $mod+n mode "default"
 }
+

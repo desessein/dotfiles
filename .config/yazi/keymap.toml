@@ -86,6 +86,11 @@ run = "shell --block --confirm 'SELECTED=$(fd -H -t f | fzf --preview \"bat --co
 desc = "Fuzzy find file and open in VS Code"
 
 [[mgr.prepend_keymap]]
+on = [ "f", "m" ]
+run = "plugin modif"
+desc = "Find recently modified files"
+
+[[mgr.prepend_keymap]]
 on = [ "f", "d" ]
 run = "plugin fzf-cd"
 desc = "Fuzzy find directory"
@@ -179,7 +184,67 @@ on = [ "<C-]>" ]
 run = "forward"
 desc = "Go forward in navigation history"
 
-[[manager.prepend_keymap]]
-on = [ "b", "r" ]
-run = "plugin restore"
-desc = "Restore files from trash"
+[[mgr.prepend_keymap]]
+on = [ "q" ]
+run = "quit"
+desc = "Quit"
+
+[[mgr.prepend_keymap]]
+on = [ "n", "a" ]
+run = "plugin harpoon add"
+desc = "add"
+
+[[mgr.prepend_keymap]]
+on = [ "h", "1" ]
+run = "plugin harpoon 'nav 1'"
+desc = "1"
+
+[[mgr.prepend_keymap]]
+on = [ "h", "2" ]
+run = "plugin harpoon 'nav 1'"
+desc = "2"
+
+[[mgr.prepend_keymap]]
+on = [ "n", "l" ]
+run = "plugin harpoon 'list'"
+desc = "list"
+
+[[mgr.prepend_keymap]]
+on = [ "q" ]
+run = "quit"
+desc = "Quit"
+
+[[mgr.prepend_keymap]]
+on = [ "n", "g" ]
+run = "plugin harpoon 'go'"
+desc = "go"
+
+[[mgr.prepend_keymap]]
+on = [ "n", "r" ]
+run = "plugin harpoon 'remove'"
+desc = "remove"
+
+[[mgr.prepend_keymap]]
+on = [ "n", "m" ]
+run = "plugin harpoon 'reorder'"
+desc = "reorder"
+
+[[mgr.prepend_keymap]]
+on = [ "p", "a" ]
+run = "plugin harpoon 'project_add'"
+desc = "add"
+
+[[mgr.prepend_keymap]]
+on = [ "p", "s" ]
+run = "plugin harpoon 'project_switch'"
+desc = "switch"
+
+[[mgr.prepend_keymap]]
+on = [ "p", "d" ]
+run = "plugin harpoon 'project_delete'"
+desc = "delete"
+
+[[mgr.prepend_keymap]]
+on = [ "p", "r" ]
+run = "plugin harpoon 'project_rename'"
+desc = "rename"

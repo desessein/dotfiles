@@ -1,1 +1,5 @@
 .config/plover/plugins
+# Ignore everything by default
+*
+# Keep tracking the gitignore file itself
+!/.gitignore

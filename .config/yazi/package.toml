@@ -33,5 +33,10 @@ use = "yazi-rs/plugins:zoom"
 rev = "8f1d971"
 hash = "9dee2bf990ea941ccf67df74bca45468"
 
+[[plugin.deps]]
+use = "Shallow-Seek/modif"
+rev = "2b3a09e"
+hash = "c32a76c9caa9cfc6cc10c83bcbebf4d0"
+
 [flavor]
 deps = []
